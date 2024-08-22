@@ -1,0 +1,16 @@
+category,name,link,description
+AI,ChatGPT,https://chat.openai.com,Free AI assistant for natural language understanding.
+AI,Google Bard (Gemini),https://bard.google.com,Google's experimental conversational AI.
+AI,Hugging Face,https://huggingface.co,Free tools for building and sharing AI models.
+Development,Go Playground,https://play.golang.org,Online environment to run Go code.
+Development,PythonAnywhere,https://www.pythonanywhere.com,Free Python environment in the cloud.
+Development,Repl.it,https://replit.com,Online IDE for multiple programming languages.
+Design,Canva,https://www.canva.com,Free design tool for creating graphics.
+Design,Figma,https://www.figma.com,Collaborative interface design tool.
+Design,Vectr,https://vectr.com,Free vector graphics editor.
+Security,Have I Been Pwned,https://haveibeenpwned.com,Check if your email has been compromised.
+Security,Virustotal,https://www.virustotal.com,Free service for analyzing files and URLs for viruses.
+Security,SSL Labs,https://www.ssllabs.com,Free SSL test for websites.
+Project Management,Trello,https://trello.com,"Free tool for managing projects with boards, lists, and cards."
+Project Management,Notion,https://www.notion.so,"Free tool for note-taking, tasks, and knowledge management."
+Project Management,Asana,https://asana.com,"Free project management tool with task lists, timelines, and more."

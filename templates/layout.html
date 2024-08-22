@@ -1,0 +1,30 @@
+{{ define "content" }}
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Interactive Links -->
+    <div class="space-y-4">
+        {{ range .Links }}
+        <a href="{{ .Link }}" class="block p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300 ease-in-out card bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white">
+            <h2 class="text-2xl font-semibold mb-2">{{ .Name }}</h2>
+            <p class="text-white">{{ .Description }}</p>
+        </a>
+        {{ else }}
+        <p class="text-gray-700">No links available.</p>
+        {{ end }}
+    </div>
+    <!-- List of Top Websites -->
+    <div class="p-6 rounded-lg shadow-lg card bg-white">
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800">Top Websites</h2>
+        <ul class="space-y-2">
+            {{ range .List }}
+            <li class="text-lg">
+                <span class="font-bold text-gray-900">{{ .Category }}:</span> 
+                <a href="{{ .Link }}" class="text-blue-500 hover:underline">{{ .Name }}</a> 
+                <p class="text-gray-600">{{ .Description }}</p>
+            </li>
+            {{ else }}
+            <li class="text-gray-700">No websites available.</li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}

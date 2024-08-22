@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9fafb; /* Light background */
+            color: #111827; /* Dark text for readability */
+            font-family: 'Inter', sans-serif; /* Modern font for a clean look */
+        }
+        .header-footer-bg {
+            background: linear-gradient(90deg, #6A0DAD, #FF1493) !important; /* Vibrant purple gradient for header/footer */
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+        }
+        .card {
+            background-color: white;
+            border-radius: 1.5em;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        h2 {
+            color: #1F2937; /* Darker text for titles */
+        }
+        .navbar {
+            background: #1F2937;
+            padding: 1rem 2rem;
+            border-radius: 1.5em;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .navbar a {
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75em;
+            background: linear-gradient(90deg, #6A0DAD, #FF1493);
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
+        }
+        .navbar a:hover {
+            background: linear-gradient(90deg, #FF1493, #6A0DAD);
+            transform: translateY(-2px);
+        }
+        .link-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .link-list a {
+            flex: 1 1 calc(33% - 2rem);
+            min-width: 280px;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 1rem;
+            background: white;
+            color: #2c3e50;
+            font-weight: 500;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .link-list a:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            margin-top: 3rem;
+            padding: 2rem 0;
+            background: linear-gradient(90deg, #6A0DAD, #FF1493);
+            color: white;
+            text-align: center;
+            border-radius: 2rem 2rem 0 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-footer-bg">
+        <h1 class="text-5xl font-extrabold">UnbelievableLinks</h1>
+        <p class="text-lg mt-2">Your gateway to the best resources on the web</p>
+    </header>
+
+    <nav class="navbar">
+        {{ range .Categories }}
+        <a href="/category/{{ . }}">{{ . }}</a>
+        {{ else }}
+        <p>No categories available.</p>
+        {{ end }}
+    </nav>
+
+    <main class="container mx-auto my-10">
+        <div class="link-list">
+            {{ range .Links }}
+            <a href="{{ .Link }}" class="card">
+                <h2 class="text-2xl mb-2">{{ .Name }}</h2>
+                <p>{{ .Description }}</p>
+            </a>
+            {{ else }}
+            <p class="text-gray-700">No links available.</p>
+            {{ end }}
+        </div>
+    </main>
+
+    <footer class="header-footer-bg">
+        <p>&copy; 2024 Unbelievable Site Web Consultants. All rights reserved.</p>
+    </footer>
+</body>
+</html>
